@@ -4,6 +4,7 @@ import co.edu.escuelaing.sparkd.SpringBoot.MicroSpring;
 import java.net.*;
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -80,11 +81,13 @@ public class HttpServer {
             }
         }
 
-        Request req = new Request(request.get("requestLine"));
-        System.out.println("RequestLine: " + req);
-        createResponse(req, new PrintWriter(
-                clientSocket.getOutputStream(), true));
-        in.close();
+        if(request.get("requestLine") != null) {
+            Request req = new Request(request.get("requestLine"));
+            System.out.println("RequestLine: " + req);
+            createResponse(req, new PrintWriter(clientSocket.getOutputStream(), true));
+            in.close();
+        }
+
     }
 
     private String[] createEntry(String rawEntry) {

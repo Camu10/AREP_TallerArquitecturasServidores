@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class HttpServer {
-    private int port = 36000;
+    private int port = 35000;
     private boolean running = false;
     private MicroSpring iocServer;
     public HttpServer() {
@@ -28,6 +28,7 @@ public class HttpServer {
 
     public void start() {
         try {
+            port = getPort();
             ServerSocket serverSocket = null;
             try {
                 serverSocket = new ServerSocket(port);
@@ -40,7 +41,7 @@ public class HttpServer {
                 try {
                     Socket clientSocket = null;
                     try {
-                        System.out.println("Listo para recibir en puerto 36000 ...");
+                        System.out.println("Listo para recibir en puerto 35000 ...");
                         clientSocket = serverSocket.accept();
                     } catch (IOException e) {
                         System.err.println("Accept failed.");
@@ -144,5 +145,16 @@ public class HttpServer {
                 + "\r\n";
         String methodresponse = iocServer.invoke(appuri);
         out.println(header + methodresponse);
+    }
+
+    /**
+     * Calcula el puerto que se va a utilizar
+     * @return int puerto
+     */
+    public int getPort() {
+        if (System.getenv("PORT") != null) {
+            return Integer.parseInt(System.getenv("PORT"));
+        }
+        return 35000; // returns default port if heroku-port isn't set(i.e. on localhost)
     }
 }

@@ -1,5 +1,5 @@
 # AREP_TallerArquitecturasServidores
-Para este taller se construyá un servidor Web(tipo Apache) en Java el cual es capaz de entregar páginas html e imágenes tipo PNG. De igual manera el servidor provee un framework IoC para la construcción de aplicaciones web a partir de POJOS.
+Para este taller se construyó un servidor Web(tipo Apache) en Java el cual es capaz de entregar páginas html e imágenes tipo PNG. De igual manera el servidor provee un framework IoC para la construcción de aplicaciones web a partir de POJOS.
 
 ## Pre-requisitos
 * [MAVEN](https://maven.apache.org/) - Administrador de dependencias.

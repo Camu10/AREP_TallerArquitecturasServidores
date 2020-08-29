@@ -21,7 +21,7 @@ Dentro del directorio AREP_LAB2, desde la consola de comandos para compilar ejec
 ```
 mvn package
 ```
-Para ejecutar el proyecto de manera local desde la consola de comandos ejecutamos la siguiente linea y desde un navegador buscamos `localhost:4567/` :
+Para ejecutar el proyecto de manera local desde la consola de comandos ejecutamos la siguiente linea y desde un navegador buscamos `localhost:35000/` :
 ```
 java -cp target/classes co.edu.escuelaing.sparkd.SpringBoot.MicroSpringBoot
 ```
@@ -32,7 +32,8 @@ Para correr las pruebas ejecutamos la siguiente linea:
 mvn test
 ```
 ## Despliegue en Heroku
-Para ingresar a la aplicación web desde cualquier navegador puede hacerlo dando click [aqui](https://tallerarquitecturasservidores.herokuapp.com/)
+Para ingresar a la aplicación web desde cualquier navegador puede hacerlo dando click [aqui](https://tallerarquitecturasservidores.herokuapp.com/).  
+Se puede acceder a `/index.html` `/Apps/hola` `/Apps/Bienvenido` `/Apps/Descripcion`.
 
 ## Construido con
 * [MAVEN](https://maven.apache.org/) - Administrador de dependencias.
